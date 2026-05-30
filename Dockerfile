@@ -23,8 +23,8 @@ COPY --from=builder /app/dist ./dist
 RUN mkdir -p /app/data
 VOLUME /app/data
 
-ENV PORT=5678
+ENV PORT=9527
 ENV DATA_DIR=/app/data
-EXPOSE 5678
+EXPOSE 9527
 
 CMD ["node", "dist/server.js"]
