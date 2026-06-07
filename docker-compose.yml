@@ -2,7 +2,7 @@ services:
   tvbox:
     build: .
     ports:
-      - "${PORT:-9527}:5678"
+      - "${PORT:-9527}:9527"
     volumes:
       - /volume1/docker/tv/data:/app/data
     environment:
