@@ -432,13 +432,14 @@ async function _runAggregation(storage: Storage, config: AppConfig, startTime: n
   }
 
   // Step 7: JAR URL 改写（CF 用 workerBaseUrl，本地用 localBaseUrl）
-  const jarBaseUrl = config.workerBaseUrl || config.localBaseUrl;
-  if (jarBaseUrl) {
-    console.log(`[aggregation] Step 7: Rewriting JAR URLs for proxy (${jarBaseUrl})...`);
-    merged = await rewriteJarUrls(merged, jarBaseUrl, storage);
-  } else {
-    console.log('[aggregation] Step 7: Skipping JAR rewrite (no base URL)');
-  }
+  //const jarBaseUrl = config.workerBaseUrl || config.localBaseUrl;
+  //if (jarBaseUrl) {
+  //  console.log(`[aggregation] Step 7: Rewriting JAR URLs for proxy (${jarBaseUrl})...`);
+  //  merged = await rewriteJarUrls(merged, jarBaseUrl, storage);
+  //} else {
+  //  console.log('[aggregation] Step 7: Skipping JAR rewrite (no base URL)');
+  //}
+  console.log('[aggregation] Step 7: JAR rewrite is DISABLED by user modification.');
 
   // Step 7.5: 注入图片代理前缀（CF 模式用自身，本地模式用边缘代理）
   if (config.workerBaseUrl) {
